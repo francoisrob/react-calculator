@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+main {
+    @apply flex flex-col justify-center items-center p-6 select-none bg-ctp-base transition-colors duration-500 ease-in;
+}
+
+.App {
+    @apply h-screen grid overflow-hidden;
+}
+
+.calculator {
+    @apply rounded-3xl border-2 border-ctp-lavender bg-ctp-crust p-4 shadow-xl shadow-ctp-overlay1 w-max h-max transition-colors duration-300 ease-in;
+}
+
+.input-keys {
+    @apply grid grid-rows-5 grid-cols-4 grid-flow-col m-1;
+}
+
+.digit-keys {
+    @apply grid grid-cols-3 row-span-4 col-span-3;
+}
+
+.operator-container {
+    @apply grid grid-cols-4 row-span-1 col-span-4;
+}
+
+.plus-equals-container {
+    @apply grid grid-cols-1 row-span-4 col-span-1 col-start-4 row-start-2;
+}
+
+.theme-switcher {
+    @apply flex justify-center absolute top-0 xl:right-0 m-4;
+}
+
+.theme-switcher-button {
+    @apply m-1 bg-ctp-surface2 p-2 rounded-lg shadow-md text-ctp-text hover:opacity-70 active:shadow-md active:scale-110 transition-colors duration-500 ease-in-out;
+}
