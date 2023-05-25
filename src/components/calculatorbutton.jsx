@@ -19,11 +19,11 @@ const CalculatorButton = (props) => {
     buttonStyle += " " + props.className;
 
     return (<button
-            className={` ${buttonStyles["calculatorkey"]} ${buttonStyle}`}
-            onClick={props.onClick}
-        >
-            {props.label}
-        </button>);
+        className={` ${buttonStyles["calculatorkey"]} ${buttonStyle}`}
+        onClick={props.onClick}
+    >
+        {props.label}
+    </button>);
 };
 
 export default CalculatorButton;
