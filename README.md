@@ -1,3 +1,3 @@
 # react-calculator
 
-Simple vite-React calculator
+Simple vite-React calculator project
