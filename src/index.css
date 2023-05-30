@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+    @apply text-xl font-bold text-ctp-text;
+}
+
 input,
 textarea,
 button,
@@ -44,4 +48,23 @@ main {
 
 .theme-switcher-button {
     @apply m-1 bg-ctp-surface2 p-2 rounded-lg shadow-md text-ctp-text hover:opacity-70 active:shadow-md active:scale-110 transition-colors duration-500 ease-in-out;
+}
+
+.history {
+    @apply flex flex-col justify-center items-start p-6 transition-all duration-500 ease-in absolute top-0 left-0 text-ctp-text text-xl;
+}
+
+.historytext {
+    @apply text-ctp-text text-sm;
+    animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
