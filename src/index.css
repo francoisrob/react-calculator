@@ -19,11 +19,13 @@ main {
 }
 
 .App {
-    @apply h-screen grid overflow-hidden;
+    @apply grid overflow-hidden;
+    height: 100vh;
+    height: 100dvh;
 }
 
 .calculator {
-    @apply rounded-3xl border-2 border-ctp-lavender bg-ctp-crust p-4 shadow-xl shadow-ctp-overlay1 w-max h-max transition-colors duration-300 ease-in;
+    @apply rounded-3xl border-2 border-ctp-lavender bg-ctp-crust p-4 shadow-xl shadow-ctp-overlay1 w-max h-max transition-colors duration-300 ease-in z-20;
 }
 
 .input-keys {
@@ -51,7 +53,21 @@ main {
 }
 
 .history {
-    @apply flex flex-col justify-center items-start p-6 transition-all duration-500 ease-in absolute top-0 left-0 text-ctp-text text-xl;
+    @apply flex flex-col justify-center items-start p-6 transition-all ease-in absolute top-0 left-0 text-ctp-text text-xl z-10;
+}
+
+/* put under calculator on mobile */
+@media (max-width: 640px) {
+    .history {
+        @apply left-0 w-full;
+        top: 100vh;
+        top: 100dvh;
+    }
+
+    .historytitle {
+        /*center inside div*/
+        @apply w-full flex justify-center;
+    }
 }
 
 .historytext {
