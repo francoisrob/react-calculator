@@ -19,9 +19,7 @@ main {
 }
 
 .App {
-    @apply grid overflow-hidden;
-    height: 100vh;
-    height: 100dvh;
+    @apply grid overflow-hidden h-screen;
 }
 
 .calculator {
@@ -44,28 +42,20 @@ main {
     @apply grid grid-cols-1 row-span-4 col-span-1 col-start-4 row-start-2;
 }
 
-.theme-switcher {
-    @apply flex justify-center absolute top-0 xl:right-0 m-4;
-}
-
 .theme-switcher-button {
     @apply m-1 bg-ctp-surface2 p-2 rounded-lg shadow-md text-ctp-text hover:opacity-70 active:shadow-md active:scale-110 transition-colors duration-500 ease-in-out;
 }
 
 .history {
-    @apply flex flex-col justify-center items-start p-6 transition-all ease-in absolute top-0 left-0 text-ctp-text text-xl z-10;
+    @apply flex flex-col justify-center items-start p-6 transition-colors duration-500 ease-in absolute top-0 left-0 text-ctp-text text-xl z-10 bg-ctp-base;
 }
 
-/* put under calculator on mobile */
 @media (max-width: 640px) {
     .history {
-        @apply left-0 w-full;
-        top: 100vh;
-        top: 100dvh;
+        @apply left-0 w-full top-[80vh];
     }
 
     .historytitle {
-        /*center inside div*/
         @apply w-full flex justify-center;
     }
 }
