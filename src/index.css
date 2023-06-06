@@ -19,7 +19,7 @@ main {
 }
 
 .App {
-    @apply grid overflow-hidden h-screen;
+    @apply grid overflow-hidden min-h-screen;
 }
 
 .calculator {
@@ -43,11 +43,11 @@ main {
 }
 
 .theme-switcher-button {
-    @apply m-1 bg-ctp-surface2 p-2 rounded-lg shadow-md text-ctp-text hover:opacity-70 active:shadow-md active:scale-110 transition-colors duration-500 ease-in-out;
+    @apply m-1 bg-ctp-surface2 p-2 rounded-lg shadow-md text-ctp-text hover:opacity-70 active:shadow-md active:scale-110 transition-colors duration-500 ease-in-out z-20;
 }
 
 .history {
-    @apply flex flex-col justify-center items-start p-6 transition-colors duration-500 ease-in absolute top-0 left-0 text-ctp-text text-xl z-10 bg-ctp-base;
+    @apply flex flex-col justify-center items-start p-6 transition-colors duration-500 ease-in absolute top-0 left-0 text-ctp-text text-xl z-10 bg-ctp-base min-w-full;
 }
 
 @media (max-width: 640px) {
