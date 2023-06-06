@@ -1,8 +1,10 @@
+import { useContext } from "react";
 import CalculatorButton from "./calculatorbutton";
 import CalculatorDisplay from "./calculatordisplay";
-import { useContext } from "react";
 import { CalculatorContext } from "../hooks/CalcProvider";
-import History from "./history";
+
+const themeSwitcherClass = "landscape:hidden flex justify-center absolute top-0 xl:right-0 m-4 z-20";
+const themeSwitcherLandscapeClass = "portrait:hidden flex flex-col absolute top-0 right-0 m-4 z-20";
 
 const themeOptions = [
   { theme: "LATTE", label: "Latte" },
@@ -14,8 +16,8 @@ const themeOptions = [
 const operatorButtons = [
   { className: "keyclear", label: "C", value: "CLEAR" },
   { className: "keydivide", label: "÷", value: "DIVIDE" },
-  { className: "keymultiply", label: "×", value: "MULTIPLY" },
-  { className: "keysubtract", label: "−", value: "SUBTRACT" },
+  { className: "keymultiply", label: "x", value: "MULTIPLY" },
+  { className: "keysubtract", label: "-", value: "SUBTRACT" },
 ];
 
 const plusEqualsButtons = [
@@ -26,7 +28,7 @@ const plusEqualsButtons = [
 const digitKeys = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0, "."];
 
 function Calculator() {
-  const { state, dispatch } = useContext(CalculatorContext);
+  const { dispatch } = useContext(CalculatorContext);
 
   const handleInput = (value) => {
     if (!isNaN(value) || value === ".") {
@@ -74,25 +76,22 @@ function Calculator() {
   }
 
   return (
-    <div className={`App ${state.theme}`}>
-      <main>
-        <div className="calculator">
-          <CalculatorDisplay />
-          <div className="input-keys">
-            <div className="operator-container">
-              {renderButtons(operatorButtons)}
-            </div>
-            <div className="plus-equals-container">
-              {renderButtons(plusEqualsButtons)}
-            </div>
-            <div className="digit-keys">{renderDigitKeys()}</div>
+    <main>
+      <div className="calculator">
+        <CalculatorDisplay />
+        <div className="input-keys">
+          <div className="operator-container">
+            {renderButtons(operatorButtons)}
           </div>
+          <div className="plus-equals-container">
+            {renderButtons(plusEqualsButtons)}
+          </div>
+          <div className="digit-keys">{renderDigitKeys()}</div>
         </div>
-        <div className="portrait:hidden flex flex-col absolute top-0 right-0 m-4">{renderThemeSwitcher()}</div>
-        <div className="landscape:hidden flex justify-center absolute top-0 xl:right-0 m-4">{renderThemeSwitcher()}</div>
-        <History />
-      </main>
-    </div>
+      </div>
+      <div className={themeSwitcherLandscapeClass}>{renderThemeSwitcher()}</div>
+      <div className={themeSwitcherClass}>{renderThemeSwitcher()}</div>
+    </main>
   );
 }
 
