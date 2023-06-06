@@ -2,7 +2,7 @@ import { CalculatorContext } from "../hooks/CalcProvider";
 import { useContext } from "react";
 
 const History = () => {
-  const { state } = useContext(CalculatorContext)
+  const { state } = useContext(CalculatorContext);
 
   function renderHistory() {
     return state.history.map((history, index) => (

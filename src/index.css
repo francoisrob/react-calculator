@@ -19,7 +19,7 @@ main {
 }
 
 .App {
-    @apply grid overflow-hidden min-h-screen;
+    @apply grid overflow-hidden h-screen;
 }
 
 .calculator {
@@ -47,7 +47,7 @@ main {
 }
 
 .history {
-    @apply flex flex-col justify-center items-start p-6 transition-colors duration-500 ease-in absolute top-0 left-0 text-ctp-text text-xl z-10 bg-ctp-base w-screen;
+    @apply flex flex-col justify-center items-start p-6 transition-colors duration-500 ease-in absolute top-0 left-0 text-ctp-text text-xl z-10 bg-ctp-base;
 }
 
 @media (max-width: 640px) {

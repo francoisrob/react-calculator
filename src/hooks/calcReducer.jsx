@@ -8,12 +8,12 @@ const INITIAL_STATE = {
 
 const isLastValueOperator = (value) => {
   const operators = ["+", "-", "*", "/"];
-  const lastNumber = value.slice(-1);
+  const lastNumber = value[value.length - 1];
   return operators.includes(lastNumber);
 };
 
 const isDot = (value) => {
-  const lastNumber = value.split(/[-+/*]/).pop();
+  const lastNumber = value.split(" ").pop();
   return lastNumber.includes(".");
 };
 
@@ -85,6 +85,7 @@ const calcReducer = (state, action) => {
       try {
         const result = eval(state.value);
         const formattedResult = parseFloat(result.toFixed(3)).toString();
+        console.log(state.history);
         return {
           ...state,
           display: formattedResult,
@@ -93,6 +94,7 @@ const calcReducer = (state, action) => {
           history: [...state.history, state.value + "=" + formattedResult],
         };
       } catch (error) {
+        console.error("Invalid expression");
         return {
           ...state,
           display: "Invalid",
