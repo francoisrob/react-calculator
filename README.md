@@ -1,4 +1,5 @@
 # React Calculator
+<img src="public/calculator.svg" width="380" align=right>
 
 This is a simple calculator project built using Vite and React. It provides basic arithmetic operations and a user-friendly interface.
 
