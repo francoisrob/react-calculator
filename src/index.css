@@ -47,7 +47,7 @@ main {
 }
 
 .history {
-    @apply flex flex-col justify-center items-start p-6 transition-colors duration-500 ease-in absolute top-0 left-0 text-ctp-text text-xl z-10 bg-ctp-base min-w-full;
+    @apply flex flex-col justify-center items-start p-6 transition-colors duration-500 ease-in text-ctp-text text-xl z-10 bg-ctp-base min-w-full;
 }
 
 @media (max-width: 640px) {

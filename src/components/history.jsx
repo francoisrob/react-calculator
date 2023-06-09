@@ -13,7 +13,7 @@ const History = () => {
   }
 
   return (
-    <div className="history">
+    <div className={`history ${state.theme}`}>
       <h1 className="historytitle">History</h1>
       {renderHistory()}
     </div>

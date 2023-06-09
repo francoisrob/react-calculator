@@ -90,7 +90,6 @@ function Calculator() {
         </div>
         <div className="portrait:hidden flex flex-col absolute top-0 right-0 m-4">{renderThemeSwitcher()}</div>
         <div className="landscape:hidden flex justify-center absolute top-0 xl:right-0 m-4">{renderThemeSwitcher()}</div>
-        <History />
       </main>
     </div>
   );
